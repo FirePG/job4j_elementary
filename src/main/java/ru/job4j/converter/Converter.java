@@ -31,7 +31,7 @@ public class Converter {
         in = 120;
         out = Converter.rubleToDollar(in);
         passed = expected == out;
-        System.out.println("120 rubles are 7 dollars. Test result : " + passed);
+        System.out.println("120 rubles are 2 dollars. Test result : " + passed);
         in = 100;
         expected = 109;
         out = Converter.euroToDollar(in);
