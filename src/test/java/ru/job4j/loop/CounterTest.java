@@ -33,20 +33,74 @@ class CounterTest {
     }
 
     @Test
-    void when2to1Then0() {
-        int start = 2;
-        int finish = 1;
+    void when1to1Then5050() {
+        int start = 1;
+        int finish = 100;
+        int expected = 5050;
+        int result = Counter.sum(start, finish);
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void when7to5Then0() {
+        int start = 7;
+        int finish = 5;
         int expected = 0;
         int result = Counter.sum(start, finish);
         assertThat(result).isEqualTo(expected);
     }
 
     @Test
-    void when6to10Then40() {
-        int start = 6;
+    void whenSumEvenNumbersFromOneToTenThenThirty() {
+        int start = 1;
         int finish = 10;
-        int expected = 40;
-        int result = Counter.sum(start, finish);
+        int result = Counter.sumByEven(start, finish);
+        int expected = 30;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenSumEvenNumbersFromZeroToTenThenThirty() {
+        int start = 0;
+        int finish = 10;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 30;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenSumEvenNumbersFromThreeToEightThenEighteen() {
+        int start = 3;
+        int finish = 8;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 18;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenSumEvenNumbersFromMinusTenToTwoThenMinusTwentyEight() {
+        int start = -10;
+        int finish = 2;
+        int result = Counter.sumByEven(start, finish);
+        int expected = -28;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenSumEvenNumbersFromTenToEightThenZero() {
+        int start = 10;
+        int finish = 8;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 0;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenSumEvenNumbersFromTwoToOneHundredThenTwoThousandFiveHundredFifty() {
+        int start = 2;
+        int finish = 100;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 2550;
         assertThat(result).isEqualTo(expected);
     }
 }
